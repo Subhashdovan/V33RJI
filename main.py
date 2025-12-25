@@ -954,7 +954,9 @@ def main_app():
 
                 if uploaded_file is not None:
                     file_text = uploaded_file.getvalue().decode("utf-8")
-                    messages = "
+                    messages = "\n".join(
+    [line.strip() for line in file_text.splitlines() if line.strip()]
+                    )
 ".join(
                         [line.strip() for line in file_text.splitlines() if line.strip()]
                     )
